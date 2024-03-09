@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\MathH">
+      <UniqueIdentifier>{9ba33d2e-2975-406b-add4-956af8d37d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\MathH\Vector">
+      <UniqueIdentifier>{f856f4ed-0aa9-4d76-8e07-e14366da66fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\MathH\Mat">
+      <UniqueIdentifier>{24a87b99-f0b6-46f9-a224-0fb4a7127f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Include">
+      <UniqueIdentifier>{27fdd903-aaa0-4ba6-929b-49248b52173a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Renderer">
+      <UniqueIdentifier>{f4bfa2c2-15fd-4d7d-ab6c-5d6f015d5e50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Renderer\Tool">
+      <UniqueIdentifier>{ad611512-3366-4d7e-beff-9ec2c130dcea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Renderer\triangle">
+      <UniqueIdentifier>{9c5ca23c-07ca-4ba3-a251-edda3a680012}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Renderer\rasterization">
+      <UniqueIdentifier>{fa8d756d-afb5-4814-a4af-979751179f05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Renderer\render">
+      <UniqueIdentifier>{3134878b-a5ce-4b41-ab81-1673d1e46e1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Renderer\screen">
+      <UniqueIdentifier>{308618e0-212f-4267-9ce4-cf687a72a4c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Renderer\texture">
+      <UniqueIdentifier>{3683fe99-6dc1-4e2c-acce-3b4bb0b16898}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Renderer\camera">
+      <UniqueIdentifier>{bbca2c15-6814-4025-8eee-298b23a355cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Renderer\Model">
+      <UniqueIdentifier>{8986b631-cef6-46b3-b147-75ac6d78362d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Production.h">
+      <Filter>头文件\MathH</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>头文件\MathH</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>头文件\MathH\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>头文件\MathH\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4.h">
+      <Filter>头文件\MathH\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.hpp">
+      <Filter>头文件\MathH\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.hpp">
+      <Filter>头文件\MathH\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4.hpp">
+      <Filter>头文件\MathH\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Mat2X2.h">
+      <Filter>头文件\MathH\Mat</Filter>
+    </ClInclude>
+    <ClInclude Include="Mat3X3.h">
+      <Filter>头文件\MathH\Mat</Filter>
+    </ClInclude>
+    <ClInclude Include="Mat4X4.h">
+      <Filter>头文件\MathH\Mat</Filter>
+    </ClInclude>
+    <ClInclude Include="Mat2X2.hpp">
+      <Filter>头文件\MathH\Mat</Filter>
+    </ClInclude>
+    <ClInclude Include="Mat3X3.hpp">
+      <Filter>头文件\MathH\Mat</Filter>
+    </ClInclude>
+    <ClInclude Include="Mat4X4.hpp">
+      <Filter>头文件\MathH\Mat</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>头文件\MathH</Filter>
+    </ClInclude>
+    <ClInclude Include="rasterization.h">
+      <Filter>头文件\Renderer\rasterization</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>头文件\Renderer\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>源文件\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>头文件\Renderer\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>头文件\Renderer\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="screen.h">
+      <Filter>头文件\Renderer\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool.h">
+      <Filter>头文件\Renderer\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="render.h">
+      <Filter>头文件\Renderer\render</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>头文件\Renderer\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="triangle.h">
+      <Filter>头文件\Renderer\triangle</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>头文件\Renderer\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="rasterization.cpp">
+      <Filter>头文件\Renderer\rasterization</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>头文件\Renderer\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>头文件\Renderer\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="screen.cpp">
+      <Filter>头文件\Renderer\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="Tool.cpp">
+      <Filter>头文件\Renderer\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>头文件\Renderer\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="render.cpp">
+      <Filter>头文件\Renderer\render</Filter>
+    </ClCompile>
+    <ClCompile Include="triangle.cpp">
+      <Filter>头文件\Renderer\triangle</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
