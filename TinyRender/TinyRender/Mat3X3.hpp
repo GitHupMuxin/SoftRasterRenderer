@@ -60,28 +60,6 @@ namespace MATH
 	}
 
 	template<typename T>
-	Mat3X3<T> Mat3X3<T>::transpose()
-	{
-		Mat3X3<T> result = Mat3X3<T>(1.0f);
-		for (int i = 0; i < 3; i++)
-		{
-			for (int j = 0; j < 3; j++)
-			{
-				result[i][j] = this->data[j][i];
-			}
-		}
-		return result;
-	}
-
-	template<typename T>
-	Mat3X3<T> Mat3X3<T>::getInvMatrices()
-	{
-		Mat3X3<T> result = Mat3X3<T>(1.0f);
-
-		return result;
-	}
-
-	template<typename T>
 	template<typename U>
 	Mat3X3<T> Mat3X3<T>::operator=(const Mat3X3<U>& mat3)
 	{
@@ -92,7 +70,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat3X3<T> Mat3X3<T>::operator+(const Mat3X3<U>& mat3)
+	Mat3X3<T> Mat3X3<T>::operator+(const Mat3X3<U>& mat3) const
 	{
 		Mat3X3<T> result = Mat3X3<T>(1.0f);
 		for (int i = 0; i < 3; i++)
@@ -105,7 +83,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat3X3<T> Mat3X3<T>::operator-(const Mat3X3<U>& mat3)
+	Mat3X3<T> Mat3X3<T>::operator-(const Mat3X3<U>& mat3) const
 	{
 		Mat3X3<T> result = Mat3X3<T>(1.0f);
 		for (int i = 0; i < 3; i++)
@@ -118,7 +96,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat3X3<T> Mat3X3<T>::operator*(const Mat3X3<U>& mat3)
+	Mat3X3<T> Mat3X3<T>::operator*(const Mat3X3<U>& mat3) const
 	{
 		Mat3X3<T> result = Mat3X3(1.0f);
 		Mat3X3<T> mat3Transpose = mat3.transpose();
@@ -132,7 +110,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat3X3<T> Mat3X3<T>::operator*(const U value)
+	Mat3X3<T> Mat3X3<T>::operator*(const U value) const
 	{
 		Mat3X3<T> result = Mat3X3(1.0f);
 		T v = static_cast<T>(value);
@@ -145,7 +123,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat3X3<T> Mat3X3<T>::operator/(const Mat3X3<U>& mat3)
+	Mat3X3<T> Mat3X3<T>::operator/(const Mat3X3<U>& mat3) const
 	{
 		Mat3X3<T> result = *(this);
 		Mat3X3<T> mat3Transpose = mat3.transpose();
@@ -154,7 +132,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat3X3<T> Mat3X3<T>::operator/(const U value)
+	Mat3X3<T> Mat3X3<T>::operator/(const U value) const
 	{
 		Mat3X3<T> result = Mat3X3<T>(1.0f);
 		T v = 1.0f / static_cast<T>(value);
@@ -211,6 +189,22 @@ namespace MATH
 		T v = 1.0f / static_cast<T>(value);
 		*(this) = *(this) * v;
 		return *(this);
+	}
+
+	template<typename T>
+	T Mat3X3<T>::detereminant() const
+	{
+		for (int i = 0; i < 3; i++)
+			if (!this->data[i][i])
+				return static_cast<T>(0.0f);
+		Mat3X3<T> temp = *(this);
+		T help = temp[1][0] / temp[0][0];
+		temp[1] -= temp[0] * help;
+		help = temp[2][0] / temp[0][0];
+		temp[2] -= temp[0] * help;
+		help = temp[2][1] / temp[1][1];
+		temp[2] -= temp[1] * help;
+		return temp[0][0] * temp[1][1] * temp[2][2];
 	}
 
 	template<typename T>

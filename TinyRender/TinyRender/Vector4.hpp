@@ -2,13 +2,13 @@
 namespace MATH
 {
 	template<typename T>
-	Vector4<T> Vector4<T>::getInvVector()
+	Vector4<T> Vector4<T>::getInvVector() const
 	{
 		return Vector4(1.0f / this->x, 1.0f / this->y, 1.0f / this->z, 1.0f / this->w);
 	}
 
 	template<typename T>
-	Vector3<T> Vector4<T>::toVector3()
+	Vector3<T> Vector4<T>::toVector3() const
 	{
 		Vector3<T> result;
 		if (this->data[3])
@@ -24,7 +24,7 @@ namespace MATH
 	}
 
 	template<typename T>
-	T Vector4<T>::length()
+	T Vector4<T>::length() const
 	{
 		T result = 0;
 		for (int i = 0; i < 4; i++)
@@ -171,7 +171,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Vector4<T> Vector4<T>::operator+(const Vector4<U>& vec)
+	Vector4<T> Vector4<T>::operator+(const Vector4<U>& vec) const
 	{
 		Vector4<T> result = Vector4<T>(0.0f);
 		result.x = this->x + vec.x;
@@ -183,7 +183,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Vector4<T> Vector4<T>::operator-(const Vector4<U>& vec)
+	Vector4<T> Vector4<T>::operator-(const Vector4<U>& vec) const
 	{
 		Vector4<T> result = Vector4<T>(0.0f);
 		result.x = this->x - vec.x;
@@ -195,7 +195,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Vector4<T> Vector4<T>::operator*(const Vector4<U>& vec)
+	Vector4<T> Vector4<T>::operator*(const Vector4<U>& vec) const
 	{
 		Vector4<T> result = Vector4<T>(0.0f);
 		result.x = this->x * vec.x;
@@ -206,7 +206,7 @@ namespace MATH
 	}
 
 	template<typename T>
-	Vector4<T> Vector4<T>::operator*(const T scale)
+	Vector4<T> Vector4<T>::operator*(const T scale) const
 	{
 		Vector4<T> result = Vector4<T>(0.0f);
 		result.x = this->x * scale;
@@ -218,7 +218,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Vector4<T> Vector4<T>::operator/(const Vector4<U>& vec)
+	Vector4<T> Vector4<T>::operator/(const Vector4<U>& vec) const
 	{
 		Vector4<T> result = Vector4<T>(0.0f);
 		result.x = this->x / vec.x;
@@ -229,7 +229,7 @@ namespace MATH
 	}
 
 	template<typename T>
-	Vector4<T> Vector4<T>::operator/(const T scale)
+	Vector4<T> Vector4<T>::operator/(const T scale) const
 	{
 		T inv = 1.0f / scale;
 		return *(this) * inv;

@@ -10,6 +10,7 @@ public:
 	MATH::Mat4X4f model;
 	MATH::Mat4X4f view;
 	MATH::Mat4X4f projection;
+	MATH::Mat4X4f transposeAndInverseMatrix;
 	void setModelMat(MATH::Vector3f rota, MATH::Vector3f scale, MATH::Vector3f trans);
 	void setViewMat(Camera camera);
 	void setProjectionMat(float cameraFov, float aspectRatio, float near, float far);	

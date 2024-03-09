@@ -2,13 +2,13 @@
 namespace MATH
 {
 	template<typename T>
-	Vector2<T> Vector2<T>::getInvVector()
+	Vector2<T> Vector2<T>::getInvVector() const
 	{
 		return Vector2<T>(1.0f / this->x, 1.0f / this->y);
 	}
 
 	template<typename T>
-	T Vector2<T>::length()
+	T Vector2<T>::length() const
 	{
 		T x = this->x;
 		T y = this->y;
@@ -91,41 +91,41 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Vector2<T> Vector2<T>::operator+(const Vector2<U>& vec)
+	Vector2<T> Vector2<T>::operator+(const Vector2<U>& vec) const
 	{
 		return Vector2(this->x + static_cast<T>(vec.x), this->y + static_cast<T>(vec.y));
 	}
 
 	template<typename T>
 	template<typename U>
-	Vector2<T> Vector2<T>::operator-(const Vector2<U>& vec)
+	Vector2<T> Vector2<T>::operator-(const Vector2<U>& vec) const
 	{
 		return Vector2(this->x - static_cast<T>(vec.x), this->y - static_cast<T>(vec.y));
 	}
 
 	template<typename T>
 	template<typename U>
-	Vector2<T> Vector2<T>::operator*(const Vector2<U>& vec)
+	Vector2<T> Vector2<T>::operator*(const Vector2<U>& vec) const
 	{
 		return Vector2(this->x * static_cast<T>(vec.x), this->y * static_cast<T>(vec.y));
 	}
 
 	template<typename T>
-	Vector2<T> Vector2<T>::operator*(const T scale)
+	Vector2<T> Vector2<T>::operator*(const T scale) const
 	{
 		return Vector2<T>(this->x * scale, this->y * scale);
 	}
 
 	template<typename T>
 	template<typename U>
-	Vector2<T> Vector2<T>::operator/(const Vector2<U>& vec)
+	Vector2<T> Vector2<T>::operator/(const Vector2<U>& vec) const
 	{
 		Vector2<T> temp = this->getInvVector();
 		return *(this) * temp;
 	}
 
 	template<typename T>
-	Vector2<T> Vector2<T>::operator/(const T scale)
+	Vector2<T> Vector2<T>::operator/(const T scale) const
 	{
 		T invScale = 1.0f / scale;
 		return *(this) * scale;

@@ -24,6 +24,7 @@
     <ProjectGuid>{fa995206-4abe-4ab8-987f-ef6a28a274e0}</ProjectGuid>
     <RootNamespace>SoftRasterRenderer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>TinyRender</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

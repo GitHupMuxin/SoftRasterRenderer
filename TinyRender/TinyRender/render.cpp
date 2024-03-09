@@ -29,12 +29,10 @@ void Render::init()
 		for (int i = 0; i < 3; i++)
 			logicTriangle[i] = MATH::multiple(M, MATH::Vector4f(data.triangle.point[i].position, 1.0f)).toVector3();
 
-
 		MATH::Mat4X4f MVP = rasterization.getMVPMat();
 		for (auto& it : data.triangle.point)
 			it.position = MATH::multiple(MVP, MATH::Vector4f(it.position, 1.0f)).toVector3();
 		this->mapToScreen(data.triangle);
-
 
 		float xMax = 0, xMin = this->screen.width - 1;
 		float yMax = 0, yMin = this->screen.height - 1;
@@ -57,7 +55,6 @@ void Render::init()
 				static int num = 1;
 				if (Tool::inTriangle(MATH::Vector2f(i + 0.5f, j + 0.5f), data.triangle))
 				{
-					std::cout << "In triangle.\n";
 					auto [alpha, beta, gamma] = Tool::computeArealCoord2D(MATH::Vector2f(i + 0.5f, j + 0.5f), data.triangle);
 					float inv = alpha / data.triangle.point[0].position.z + beta / data.triangle.point[1].position.z + gamma / data.triangle.point[2].position.z;
 					float Z = 1.0f / inv;
@@ -71,6 +68,7 @@ void Render::init()
 						fragmentData.cameraPos = camera.position;
 						fragmentData.fagPos = Tool::interpolation(alpha, beta, gamma, logicTriangle[0], logicTriangle[1], logicTriangle[2]);
 						fragmentData.Normal = Tool::interpolation(alpha, beta, gamma, data.triangle.point[0].Normal, data.triangle.point[1].Normal, data.triangle.point[2].Normal);
+						fragmentData.Normal = MATH::multiple(rasterization.transposeAndInverseMatrix, MATH::Vector4f(fragmentData.Normal, 1.0f)).toVector3();
 						MATH::Vector2f TexCoord = Tool::interpolation(alpha, beta, gamma, data.triangle.point[0].TexCoord, data.triangle.point[1].TexCoord, data.triangle.point[2].TexCoord);
 						fragmentData.diffuseColor = MATH::Vector3f(data.texture.getColor(TexCoord));
 						screen.frameBuffer[index] = this->fShader(fragmentData);

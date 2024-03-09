@@ -45,30 +45,26 @@ namespace MATH
 				const W1& w1, const W2& w2, const W3& w3, const W4& w4
 		);
 
-		Mat4X4<T> transpose();
-
-		Mat4X4<T> getInvMatrices();
-
 		template<typename U>
 		Mat4X4<T> operator=(const Mat4X4<U>& mat4);
 
 		template<typename U>
-		Mat4X4<T> operator+(const Mat4X4<U>& mat4);
+		Mat4X4<T> operator+(const Mat4X4<U>& mat4) const;
 
 		template<typename U>
-		Mat4X4<T> operator-(const Mat4X4<U>& mat4);
+		Mat4X4<T> operator-(const Mat4X4<U>& mat4) const;
 
 		template<typename U>
-		Mat4X4<T> operator*(const Mat4X4<U>& mat4);
+		Mat4X4<T> operator*(const Mat4X4<U>& mat4) const;
 
 		template<typename U>
-		Mat4X4<T> operator*(const U value);
+		Mat4X4<T> operator*(const U value) const;
 
 		template<typename U>
-		Mat4X4<T> operator/(const Mat4X4<U>& mat4);
+		Mat4X4<T> operator/(const Mat4X4<U>& mat4) const;
 
 		template<typename U>
-		Mat4X4<T> operator/(const U value);
+		Mat4X4<T> operator/(const U value) const;
 
 		template<typename U>
 		Mat4X4<T> operator+=(const Mat4X4<U>& mat4);
@@ -91,6 +87,8 @@ namespace MATH
 		Vector4<T>& operator[](const int i);
 
 		const Vector4<T>& operator[](const int i) const;
+
+		T detereminant() const;
 
 		friend std::ostream& operator<<(std::ostream& os, const Mat4X4<T>& mat)
 		{
