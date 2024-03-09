@@ -16,9 +16,9 @@ namespace MATH
 			struct { T data[2]; };
 		};
 
-		Vector2<T> getInvVector();
+		Vector2<T> getInvVector() const;
 
-		T length();
+		T length() const;
 
 		Vector2();
 
@@ -39,15 +39,15 @@ namespace MATH
 		template<typename U>
 		Vector2<T> operator=(const Vector2<U>* vec);
 		template<typename U>
-		Vector2<T> operator+(const Vector2<U>& vec);
+		Vector2<T> operator+(const Vector2<U>& vec) const;
 		template<typename U>
-		Vector2<T> operator-(const Vector2<U>& vec);
+		Vector2<T> operator-(const Vector2<U>& vec) const;
 		template<typename U>
-		Vector2<T> operator*(const Vector2<U>& vec);
-		Vector2<T> operator*(const T scale);
+		Vector2<T> operator*(const Vector2<U>& vec) const;
+		Vector2<T> operator*(const T scale) const;
 		template<typename U>
-		Vector2<T> operator/(const Vector2<U>& vec);
-		Vector2<T> operator/(const T scale);
+		Vector2<T> operator/(const Vector2<U>& vec) const;
+		Vector2<T> operator/(const T scale) const;
 		template<typename U>
 		Vector2<T> operator+=(const Vector2<U>& vec);
 		template<typename U>

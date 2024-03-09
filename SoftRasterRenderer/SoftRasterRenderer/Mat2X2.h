@@ -29,30 +29,26 @@ namespace MATH
 		template<typename X, typename Y>
 		Mat2X2(const Vector2<X>* vec1, const Vector2<Y>* vec2);
 
-		Mat2X2<T> transpose();
-
-		Mat2X2<T> inverse();
-
 		template<typename U>
 		Mat2X2<T> operator=(const Mat2X2<U>& mat);
 
 		template<typename U>
-		Mat2X2<T> operator+(const Mat2X2<U>& mat);
+		Mat2X2<T> operator+(const Mat2X2<U>& mat) const;
 
 		template<typename U>
-		Mat2X2<T> operator-(const Mat2X2<U>& mat);
+		Mat2X2<T> operator-(const Mat2X2<U>& mat) const;
 
 		template<typename U>
-		Mat2X2<T> operator*(const Mat2X2<U>& mat);
+		Mat2X2<T> operator*(const Mat2X2<U>& mat) const;
 
 		template<typename U>
-		Mat2X2<T> operator*(const U value);
+		Mat2X2<T> operator*(const U value) const;
 
 		template<typename U>
-		Mat2X2<T> operator/(const Mat2X2<U>& mat);
+		Mat2X2<T> operator/(const Mat2X2<U>& mat) const;
 
 		template<typename U>
-		Mat2X2<T> operator/(const U value);
+		Mat2X2<T> operator/(const U value) const;
 
 		template<typename U>
 		Mat2X2<T> operator+=(const Mat2X2<U>& mat);
@@ -75,6 +71,8 @@ namespace MATH
 		Vector2<T>& operator[](const int i);
 
 		const Vector2<T>& operator[](const int i) const;
+
+		T detereminant() const;
 
 		friend std::ostream& operator<<(std::ostream& os, const Mat2X2<T>& mat)
 		{

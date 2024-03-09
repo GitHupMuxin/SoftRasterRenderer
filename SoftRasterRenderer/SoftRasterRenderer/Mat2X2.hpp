@@ -59,25 +59,7 @@ namespace MATH
 		this->data[1] = vec2;
 	}
 
-	template<typename T>
-	Mat2X2<T> Mat2X2<T>::transpose()
-	{
-		Mat2X2<T> result = Mat2X2<T>(1.0f);
-		for (int i = 0; i < 2; i++)
-		{
-			for (int j = 0; j < 2; j++)
-			{
-				result[i][j] = this->data[j][i];
-			}
-		}
-		return result;
-	}
 
-	template<typename T>
-	Mat2X2<T> Mat2X2<T>::inverse()
-	{
-
-	}
 
 	template<typename T>
 	template<typename U>
@@ -90,7 +72,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat2X2<T> Mat2X2<T>::operator+(const Mat2X2<U>& mat)
+	Mat2X2<T> Mat2X2<T>::operator+(const Mat2X2<U>& mat) const
 	{
 		for (int i = 0; i < 2; i++)
 		{
@@ -102,7 +84,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat2X2<T> Mat2X2<T>::operator-(const Mat2X2<U>& mat)
+	Mat2X2<T> Mat2X2<T>::operator-(const Mat2X2<U>& mat) const
 	{
 		for (int i = 0; i < 2; i++)
 		{
@@ -114,7 +96,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat2X2<T> Mat2X2<T>::operator*(const Mat2X2<U>& mat)
+	Mat2X2<T> Mat2X2<T>::operator*(const Mat2X2<U>& mat) const
 	{
 		Mat2X2<T> result = Mat2X2<T>(1.0f);
 		Mat2X2<T> transpose = mat.transpose();
@@ -128,7 +110,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat2X2<T> Mat2X2<T>::operator*(const U value)
+	Mat2X2<T> Mat2X2<T>::operator*(const U value) const
 	{
 		T v = static_cast<T>(value);
 		Mat2X2<T> result = *(this);
@@ -142,7 +124,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat2X2<T> Mat2X2<T>::operator/(const Mat2X2<U>& mat)
+	Mat2X2<T> Mat2X2<T>::operator/(const Mat2X2<U>& mat) const
 	{
 		Mat2X2<T> inverse = mat.inverse();
 		return *(this) * inverse;
@@ -150,7 +132,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat2X2<T> Mat2X2<T>::operator/(const U value)
+	Mat2X2<T> Mat2X2<T>::operator/(const U value) const
 	{
 		T v = 1.0f / static_cast<T>(value);
 		return *(this) * v;
@@ -214,6 +196,15 @@ namespace MATH
 	Vector2<T>& Mat2X2<T>::operator[](const int i)
 	{
 		return this->data[i];
+	}
+
+	template<typename T>
+	T Mat2X2<T>::detereminant() const
+	{
+		Mat2X2<T> temp = *(this);
+		if (temp[1][0])
+			temp[1][1] -= (temp[1][0] / temp[0][0]) * temp[0][0];
+		return temp[0][0] * temp[1][1];
 	}
 }
 

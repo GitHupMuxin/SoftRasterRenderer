@@ -20,10 +20,10 @@ namespace MATH
 			struct { T data[4]; };
 		};
 
-		Vector4<T> getInvVector();
-		Vector3<T> toVector3();
+		Vector4<T> getInvVector() const;
+		Vector3<T> toVector3() const;
 
-		T length();
+		T length() const;
 
 		Vector4();
 
@@ -53,15 +53,15 @@ namespace MATH
 		template<typename U>
 		Vector4<T> operator=(const Vector4<U>* vec);
 		template<typename U>
-		Vector4<T> operator+(const Vector4<U>& vec);
+		Vector4<T> operator+(const Vector4<U>& vec) const;
 		template<typename U>
-		Vector4<T> operator-(const Vector4<U>& vec);
+		Vector4<T> operator-(const Vector4<U>& vec) const;
 		template<typename U>
-		Vector4<T> operator*(const Vector4<U>& vec);
-		Vector4<T> operator*(const T scale);
+		Vector4<T> operator*(const Vector4<U>& vec) const;
+		Vector4<T> operator*(const T scale) const;
 		template<typename U>
-		Vector4<T> operator/(const Vector4<U>& vec);
-		Vector4<T> operator/(const T scale);
+		Vector4<T> operator/(const Vector4<U>& vec) const;
+		Vector4<T> operator/(const T scale) const;
 		template<typename U>
 		Vector4<T> operator+=(const Vector4<U>& vec);
 		template<typename U>

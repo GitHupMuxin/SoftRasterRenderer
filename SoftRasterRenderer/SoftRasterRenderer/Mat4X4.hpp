@@ -105,30 +105,6 @@ namespace MATH
 		this->data[3] = v3;
 	}
 
-
-
-	template<typename T>
-	Mat4X4<T> Mat4X4<T>::transpose()
-	{
-		Mat4X4<T> result = Mat4X4<T>(1.0f);
-		for (int i = 0; i < 4; i++)
-		{
-			for (int j = 0; j < 4; j++)
-			{
-				result[i][j] = this->data[j][i];
-			}
-		}
-		return result;
-	}
-
-	template<typename T>
-	Mat4X4<T> Mat4X4<T>::getInvMatrices()
-	{
-		Mat4X4<T> result = Mat4X4<T>(1.0f);
-
-		return result;
-	}
-
 	template<typename T>
 	template<typename U>
 	Mat4X4<T> Mat4X4<T>::operator=(const Mat4X4<U>& mat4)
@@ -140,7 +116,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat4X4<T> Mat4X4<T>::operator+(const Mat4X4<U>& mat4)
+	Mat4X4<T> Mat4X4<T>::operator+(const Mat4X4<U>& mat4) const
 	{
 		Mat4X4<T> result = Mat4X4<T>(1.0f);
 		for (int i = 0; i < 4; i++)
@@ -153,7 +129,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat4X4<T> Mat4X4<T>::operator-(const Mat4X4<U>& mat4)
+	Mat4X4<T> Mat4X4<T>::operator-(const Mat4X4<U>& mat4) const
 	{
 		Mat4X4<T> result = Mat4X4<T>(1.0f);
 		for (int i = 0; i < 4; i++)
@@ -166,7 +142,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat4X4<T> Mat4X4<T>::operator*(const Mat4X4<U>& mat4)
+	Mat4X4<T> Mat4X4<T>::operator*(const Mat4X4<U>& mat4) const
 	{
 		Mat4X4<T> result = Mat4X4(1.0f);
 		Mat4X4<T> mat4Transpose = mat4.transpose();
@@ -180,20 +156,21 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat4X4<T> Mat4X4<T>::operator*(const U value)
+	Mat4X4<T> Mat4X4<T>::operator*(const U value) const
 	{
 		Mat4X4<T> result = Mat4X4(1.0f);
 		T v = static_cast<T>(value);
 		for (int i = 0; i < 4; i++)
 		{
 			for (int j = 0; j < 4; j++)
-				result[i][j] = *(this)[i][j] * v;
+				result[i][j] = this->data[i][j] * v;
 		}
+		return result;
 	}
 
 	template<typename T>
 	template<typename U>
-	Mat4X4<T> Mat4X4<T>::operator/(const Mat4X4<U>& mat4)
+	Mat4X4<T> Mat4X4<T>::operator/(const Mat4X4<U>& mat4) const
 	{
 		Mat4X4<T> result = *(this);
 		Mat4X4<T> mat3Transpose = mat4.transpose();
@@ -202,7 +179,7 @@ namespace MATH
 
 	template<typename T>
 	template<typename U>
-	Mat4X4<T> Mat4X4<T>::operator/(const U value)
+	Mat4X4<T> Mat4X4<T>::operator/(const U value) const
 	{
 		Mat4X4<T> result = Mat4X4<T>(1.0f);
 		T v = 1.0f / static_cast<T>(value);
@@ -271,6 +248,29 @@ namespace MATH
 	inline const Vector4<T>& Mat4X4<T>::operator[](const int i) const
 	{
 		return this->data[i];
+	}
+
+	template<typename T>
+	T Mat4X4<T>::detereminant() const
+	{
+		for (int i = 0; i < 4; i++)
+			if (!this->data[i][i])
+				return static_cast<T>(0.0f);
+		Mat4X4<T> temp = *this;
+		int count = 0;
+		T help = static_cast<T>(0.0f);
+		T result = temp[0][0];
+		for (int j = 0; j < 3; j++)
+		{
+			for (int i = count + 1; i < 4; i++)
+			{
+				help = temp[i][j] / temp[count][count];
+				temp[i] -= temp[count] * help;
+			}
+			result *= temp[count][count];
+			count++;
+		}
+		return result;
 	}
 
 }

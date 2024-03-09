@@ -29,30 +29,26 @@ namespace MATH
 		template<typename X, typename Y, typename Z>
 		Mat3X3(const Vector3<X>* vec1, const Vector3<Y>* vec2, const Vector3<Z>* vec3);
 
-		Mat3X3<T> transpose();
-
-		Mat3X3<T> getInvMatrices();
-
 		template<typename U>
 		Mat3X3<T> operator=(const Mat3X3<U>& mat3);
 
 		template<typename U>
-		Mat3X3<T> operator+(const Mat3X3<U>& mat3);
+		Mat3X3<T> operator+(const Mat3X3<U>& mat3) const;
 
 		template<typename U>
-		Mat3X3<T> operator-(const Mat3X3<U>& mat3);
+		Mat3X3<T> operator-(const Mat3X3<U>& mat3) const;
 
 		template<typename U>
-		Mat3X3<T> operator*(const Mat3X3<U>& mat3);
+		Mat3X3<T> operator*(const Mat3X3<U>& mat3) const;
 
 		template<typename U>
-		Mat3X3<T> operator*(const U value);
+		Mat3X3<T> operator*(const U value) const;
 
 		template<typename U>
-		Mat3X3<T> operator/(const Mat3X3<U>& mat3);
+		Mat3X3<T> operator/(const Mat3X3<U>& mat3) const;
 
 		template<typename U>
-		Mat3X3<T> operator/(const U value);
+		Mat3X3<T> operator/(const U value) const;
 
 		template<typename U>
 		Mat3X3<T> operator+=(const Mat3X3<U>& mat3);
@@ -75,6 +71,8 @@ namespace MATH
 		Vector3<T>& operator[](const int i);
 
 		const Vector3<T>& operator[](const int i) const;
+
+		T detereminant() const;
 
 		friend std::ostream& operator<<(std::ostream& os, const Mat3X3<T>& mat)
 		{

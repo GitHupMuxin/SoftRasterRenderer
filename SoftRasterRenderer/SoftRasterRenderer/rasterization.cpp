@@ -32,6 +32,7 @@ void Rasterization::setModelMat(MATH::Vector3f rota, MATH::Vector3f scale, MATH:
 	this->model = MATH::multiple(rZM, this->model);
 	this->model = MATH::multiple(scaleM, this->model);
 	this->model = MATH::multiple(translateM, this->model);
+	this->transposeAndInverseMatrix = MATH::transpose(MATH::InverseMatrix(this->model));
 }
 
 void Rasterization::setViewMat(Camera camera)
