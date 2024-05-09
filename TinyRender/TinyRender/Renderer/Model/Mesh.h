@@ -1,12 +1,12 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "Production.h"
+#include "../../MathH/Production.h"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
-#include "texture.h"
-#include "triangle.h"
+#include "../texture/texture.h"
+#include "../triangle/triangle.h"
 
 namespace MODEL
 {

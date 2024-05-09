@@ -1,6 +1,6 @@
 #include <iostream>
 #include "render.h"
-#include "Tool.h"
+#include "../Tool/Tool.h"
 
 #define EPS 1e-3
 

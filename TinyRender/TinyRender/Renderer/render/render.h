@@ -1,11 +1,11 @@
 #pragma once
 #include <functional>
-#include "camera.h"
-#include "screen.h"
-#include "rasterization.h"
-#include "triangle.h"
-#include "texture.h"
-#include "Model.h"
+#include "../camera/camera.h"
+#include "../screen/screen.h"
+#include "../rasterization/rasterization.h"
+#include "../triangle/triangle.h"
+#include "../texture/texture.h"
+#include "../Model/Model.h"
 
 class light
 {

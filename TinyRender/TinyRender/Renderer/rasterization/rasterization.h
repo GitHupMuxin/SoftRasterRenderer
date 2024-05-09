@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
-#include "Production.h"
-#include "camera.h"
+#include "../../MathH/Production.h"
+#include "../camera/camera.h"
 
 class Rasterization
 {

@@ -54,79 +54,79 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Production.h">
+    <ClInclude Include="MathH\Production.h">
       <Filter>头文件\MathH</Filter>
     </ClInclude>
-    <ClInclude Include="Define.h">
+    <ClInclude Include="MathH\Define.h">
       <Filter>头文件\MathH</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2.h">
+    <ClInclude Include="MathH\Vector\Vector2.h">
       <Filter>头文件\MathH\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Vector3.h">
+    <ClInclude Include="MathH\Vector\Vector3.h">
       <Filter>头文件\MathH\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Vector4.h">
+    <ClInclude Include="MathH\Vector\Vector4.h">
       <Filter>头文件\MathH\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2.hpp">
+    <ClInclude Include="MathH\Vector\Vector2.hpp">
       <Filter>头文件\MathH\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Vector3.hpp">
+    <ClInclude Include="MathH\Vector\Vector3.hpp">
       <Filter>头文件\MathH\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Vector4.hpp">
+    <ClInclude Include="MathH\Vector\Vector4.hpp">
       <Filter>头文件\MathH\Vector</Filter>
     </ClInclude>
-    <ClInclude Include="Mat2X2.h">
+    <ClInclude Include="MathH\Mat\Mat2X2.h">
       <Filter>头文件\MathH\Mat</Filter>
     </ClInclude>
-    <ClInclude Include="Mat3X3.h">
+    <ClInclude Include="MathH\Mat\Mat3X3.h">
       <Filter>头文件\MathH\Mat</Filter>
     </ClInclude>
-    <ClInclude Include="Mat4X4.h">
+    <ClInclude Include="MathH\Mat\Mat4X4.h">
       <Filter>头文件\MathH\Mat</Filter>
     </ClInclude>
-    <ClInclude Include="Mat2X2.hpp">
+    <ClInclude Include="MathH\Mat\Mat2X2.hpp">
       <Filter>头文件\MathH\Mat</Filter>
     </ClInclude>
-    <ClInclude Include="Mat3X3.hpp">
+    <ClInclude Include="MathH\Mat\Mat3X3.hpp">
       <Filter>头文件\MathH\Mat</Filter>
     </ClInclude>
-    <ClInclude Include="Mat4X4.hpp">
+    <ClInclude Include="MathH\Mat\Mat4X4.hpp">
       <Filter>头文件\MathH\Mat</Filter>
     </ClInclude>
-    <ClInclude Include="Enum.h">
+    <ClInclude Include="MathH\Enum.h">
       <Filter>头文件\MathH</Filter>
     </ClInclude>
-    <ClInclude Include="rasterization.h">
+    <ClInclude Include="Renderer\rasterization\rasterization.h">
       <Filter>头文件\Renderer\rasterization</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
+    <ClInclude Include="Renderer\camera\camera.h">
       <Filter>头文件\Renderer\camera</Filter>
     </ClInclude>
     <ClInclude Include="stb_image.h">
       <Filter>源文件\Include</Filter>
     </ClInclude>
-    <ClInclude Include="Model.h">
+    <ClInclude Include="Renderer\Model\Model.h">
       <Filter>头文件\Renderer\Model</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.h">
+    <ClInclude Include="Renderer\Model\Mesh.h">
       <Filter>头文件\Renderer\Model</Filter>
     </ClInclude>
-    <ClInclude Include="screen.h">
+    <ClInclude Include="Renderer\screen\screen.h">
       <Filter>头文件\Renderer\screen</Filter>
     </ClInclude>
-    <ClInclude Include="Tool.h">
+    <ClInclude Include="Renderer\Tool\Tool.h">
       <Filter>头文件\Renderer\Tool</Filter>
     </ClInclude>
-    <ClInclude Include="render.h">
+    <ClInclude Include="Renderer\render\render.h">
       <Filter>头文件\Renderer\render</Filter>
     </ClInclude>
-    <ClInclude Include="texture.h">
+    <ClInclude Include="Renderer\texture\texture.h">
       <Filter>头文件\Renderer\texture</Filter>
     </ClInclude>
-    <ClInclude Include="triangle.h">
+    <ClInclude Include="Renderer\triangle\triangle.h">
       <Filter>头文件\Renderer\triangle</Filter>
     </ClInclude>
   </ItemGroup>
@@ -134,31 +134,31 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="camera.cpp">
+    <ClCompile Include="Renderer\camera\camera.cpp">
       <Filter>头文件\Renderer\camera</Filter>
     </ClCompile>
-    <ClCompile Include="rasterization.cpp">
+    <ClCompile Include="Renderer\rasterization\rasterization.cpp">
       <Filter>头文件\Renderer\rasterization</Filter>
     </ClCompile>
-    <ClCompile Include="Mesh.cpp">
+    <ClCompile Include="Renderer\Model\Mesh.cpp">
       <Filter>头文件\Renderer\Model</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
+    <ClCompile Include="Renderer\Model\Model.cpp">
       <Filter>头文件\Renderer\Model</Filter>
     </ClCompile>
-    <ClCompile Include="screen.cpp">
+    <ClCompile Include="Renderer\screen\screen.cpp">
       <Filter>头文件\Renderer\screen</Filter>
     </ClCompile>
-    <ClCompile Include="Tool.cpp">
+    <ClCompile Include="Renderer\Tool\Tool.cpp">
       <Filter>头文件\Renderer\Tool</Filter>
     </ClCompile>
-    <ClCompile Include="texture.cpp">
+    <ClCompile Include="Renderer\texture\texture.cpp">
       <Filter>头文件\Renderer\texture</Filter>
     </ClCompile>
-    <ClCompile Include="render.cpp">
+    <ClCompile Include="Renderer\render\render.cpp">
       <Filter>头文件\Renderer\render</Filter>
     </ClCompile>
-    <ClCompile Include="triangle.cpp">
+    <ClCompile Include="Renderer\triangle\triangle.cpp">
       <Filter>头文件\Renderer\triangle</Filter>
     </ClCompile>
   </ItemGroup>

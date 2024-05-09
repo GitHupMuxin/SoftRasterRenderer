@@ -1,7 +1,7 @@
 #pragma once
 #include "Mesh.h"
-#include "texture.h"
-#include "triangle.h"
+#include "../texture/texture.h"
+#include "../triangle/triangle.h"
 
 namespace MODEL
 {

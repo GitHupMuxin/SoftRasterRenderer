@@ -1,7 +1,7 @@
 #pragma once
 #include <tuple>
-#include "Mesh.h"
-#include "Production.h"
+#include "../Model/Mesh.h"
+#include "../../MathH/Production.h"
 
 class Tool
 {

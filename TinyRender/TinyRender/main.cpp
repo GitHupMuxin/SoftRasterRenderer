@@ -2,13 +2,13 @@
 #include <limits>
 #include <opencv2/opencv.hpp>
 #include <vector>
-#include "Production.h"
-#include "screen.h"
-#include "camera.h"
-#include "rasterization.h"
-#include "Model.h"
-#include "Tool.h"
-#include "render.h"
+#include "MathH/Production.h"
+#include "Renderer/screen/screen.h"
+#include "Renderer/camera/camera.h"
+#include "Renderer/rasterization/rasterization.h"
+#include "Renderer/Model/Model.h"
+#include "Renderer/Tool/Tool.h"
+#include "Renderer/render/render.h"
 
 int main()
 {

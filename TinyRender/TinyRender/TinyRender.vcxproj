@@ -154,43 +154,43 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="Define.h" />
-    <ClInclude Include="Enum.h" />
-    <ClInclude Include="Mat2X2.h" />
-    <ClInclude Include="Mat2X2.hpp" />
-    <ClInclude Include="Mat3X3.h" />
-    <ClInclude Include="Mat3X3.hpp" />
-    <ClInclude Include="Mat4X4.h" />
-    <ClInclude Include="Mat4X4.hpp" />
-    <ClInclude Include="Mesh.h" />
-    <ClInclude Include="Model.h" />
-    <ClInclude Include="Production.h" />
-    <ClInclude Include="rasterization.h" />
-    <ClInclude Include="render.h" />
-    <ClInclude Include="screen.h" />
+    <ClInclude Include="Renderer\camera\camera.h" />
+    <ClInclude Include="MathH\Define.h" />
+    <ClInclude Include="MathH\Enum.h" />
+    <ClInclude Include="MathH\Mat\Mat2X2.h" />
+    <ClInclude Include="MathH\Mat\Mat2X2.hpp" />
+    <ClInclude Include="MathH\Mat\Mat3X3.h" />
+    <ClInclude Include="MathH\Mat\Mat3X3.hpp" />
+    <ClInclude Include="MathH\Mat\Mat4X4.h" />
+    <ClInclude Include="MathH\Mat\Mat4X4.hpp" />
+    <ClInclude Include="Renderer\Model\Mesh.h" />
+    <ClInclude Include="Renderer\Model\Model.h" />
+    <ClInclude Include="MathH\Production.h" />
+    <ClInclude Include="Renderer\rasterization\rasterization.h" />
+    <ClInclude Include="Renderer\render\render.h" />
+    <ClInclude Include="Renderer\screen\screen.h" />
     <ClInclude Include="stb_image.h" />
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="Tool.h" />
-    <ClInclude Include="triangle.h" />
-    <ClInclude Include="Vector2.h" />
-    <ClInclude Include="Vector2.hpp" />
-    <ClInclude Include="Vector3.h" />
-    <ClInclude Include="Vector3.hpp" />
-    <ClInclude Include="Vector4.h" />
-    <ClInclude Include="Vector4.hpp" />
+    <ClInclude Include="Renderer\texture\texture.h" />
+    <ClInclude Include="Renderer\Tool\Tool.h" />
+    <ClInclude Include="Renderer\triangle\triangle.h" />
+    <ClInclude Include="MathH\Vector\Vector2.h" />
+    <ClInclude Include="MathH\Vector\Vector2.hpp" />
+    <ClInclude Include="MathH\Vector\Vector3.h" />
+    <ClInclude Include="MathH\Vector\Vector3.hpp" />
+    <ClInclude Include="MathH\Vector\Vector4.h" />
+    <ClInclude Include="MathH\Vector\Vector4.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="Renderer\camera\camera.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="Model.cpp" />
-    <ClCompile Include="rasterization.cpp" />
-    <ClCompile Include="render.cpp" />
-    <ClCompile Include="screen.cpp" />
-    <ClCompile Include="texture.cpp" />
-    <ClCompile Include="Tool.cpp" />
-    <ClCompile Include="triangle.cpp" />
+    <ClCompile Include="Renderer\Model\Mesh.cpp" />
+    <ClCompile Include="Renderer\Model\Model.cpp" />
+    <ClCompile Include="Renderer\rasterization\rasterization.cpp" />
+    <ClCompile Include="Renderer\render\render.cpp" />
+    <ClCompile Include="Renderer\screen\screen.cpp" />
+    <ClCompile Include="Renderer\texture\texture.cpp" />
+    <ClCompile Include="Renderer\Tool\Tool.cpp" />
+    <ClCompile Include="Renderer\triangle\triangle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

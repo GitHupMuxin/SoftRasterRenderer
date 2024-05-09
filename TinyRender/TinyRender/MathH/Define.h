@@ -1,11 +1,11 @@
 #pragma once
 #include <iostream>
-#include "Vector2.h"
-#include "Vector3.h"
-#include "Vector4.h"
-#include "Mat2X2.h"
-#include "Mat3X3.h"
-#include "Mat4X4.h"
+#include "Vector/Vector2.h"
+#include "Vector/Vector3.h"
+#include "Vector/Vector4.h"
+#include "Mat/Mat2X2.h"
+#include "Mat/Mat3X3.h"
+#include "Mat/Mat4X4.h"
 
 namespace MATH
 {
